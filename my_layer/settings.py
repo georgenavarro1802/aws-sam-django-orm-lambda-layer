@@ -7,7 +7,7 @@ SECRET_KEY = "<SECRET_KEY_HERE>"
 INSTALLED_APPS = (
     'django.contrib.auth',          # Only needed if you are using a custom or built-in django auth models 
     'django.contrib.contenttypes',  # Only needed if you are using content types django objects 
-    "<APP_LABEL_HERE>",
+    "db",
 )
 
 # This configuration is for a db 
