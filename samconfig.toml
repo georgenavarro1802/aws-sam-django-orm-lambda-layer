@@ -1,0 +1,12 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "stack-lambda-django-orm"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-k32vur05nhm0"
+s3_prefix = "stack-lambda-django-orm"
+region = "eu-west-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+disable_rollback = true
+image_repositories = []

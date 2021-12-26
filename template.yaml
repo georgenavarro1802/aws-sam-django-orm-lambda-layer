@@ -1,0 +1,33 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Testing Django as Standalone library within a Lambda Layer
+
+Globals:
+  Function:
+    Timeout: 15
+    Runtime: python3.8
+
+Resources:
+  LambdaDjangoORM:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: Lambda-Django-ORM
+      Description: Lambda Django ORM 
+      CodeUri: lambda/
+      Handler: main.lambda_handler
+      Layers: 
+      - !Ref LayerDjangoOrM
+
+  LayerDjangoOrM:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: LayerDjangoOrM
+      Description: My Lambda Layer to test Django Standalone within Layer
+      ContentUri: my_layer
+      CompatibleRuntimes: 
+        - python3.8
+      LicenseInfo: MIT
+      RetentionPolicy: Retain
+    Metadata:
+      BuildMethod: python3.8
+  
